@@ -1,0 +1,15 @@
+.contentTasks {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background-color: #161B22;
+    font-size: 18px;
+    font-weight: 500;
+    color: #c9d1d9;
+    align-items: center;
+    margin-top: 10px;
+    gap: 30px;
+    padding-left: 20px;
+    border-radius: 8px;
+    border: 1px solid white;
+}

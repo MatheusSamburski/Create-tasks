@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    padding: 20px;
+    background-color: #161B22;
+    justify-content: center;
+}
+
+.contentHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contentHeader h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.contentHeader svg {
+    margin-left: 20px;
+    color: white;;
+}
