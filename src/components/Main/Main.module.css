@@ -19,6 +19,7 @@
     border: none;
     color: white;
     padding-left: 10px;
+    border: 0.8px solid gray;
 }
 
 .inputCreateTask button {
@@ -29,6 +30,11 @@
     color: white;
     background-color: green;
     border-radius: 8px;
+    transition: 0.7s;
+}
+
+.inputCreateTask button:hover {
+    transform: scale(1.2);
 }
 
 .main {

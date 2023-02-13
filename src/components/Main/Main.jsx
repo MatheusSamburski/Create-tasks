@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect} from "react";
 import { http } from "../../axios";
 import { Task } from "./components/Task/Task";
 import styles from "./Main.module.css";
 import { useForm } from "react-hook-form";
+import { TasksContext } from "../../context/ContextTask";
 
-export function Main() {
-    const [tasks, setTasks] = useState([]);
+export function Main({handleDeleteTask}) {
+    const {tasks, setTasks} = useContext(TasksContext)
 
     const { register, handleSubmit } = useForm({
         defaultValues: {
@@ -27,13 +28,20 @@ export function Main() {
         setTasks(response.data);
     }
 
+    async function handleDeleteTask(id) {
+        console.log(`Deleting task with ID: ${id}`);
+        console.log(`Full URL: http://localhost:3000/tasks/${id}`);
+        await http.delete(`tasks/${id}`);
+        const updatedTasks = tasks.filter((task) => task.id !== id);
+        setTasks([...updatedTasks]);
+    }
+
     useEffect(() => {
         getTasks();
     }, [])
 
     return (
         <>
-
             <h1 className={styles.textPendingQuest}>Liste aqui suas tarefas pendentes</h1>
             <div className={styles.inputCreateTask}>
                 <form htmlFor="create-task" onSubmit={handleSubmit(createTasks)}>
@@ -48,10 +56,9 @@ export function Main() {
             </div>
             <main className={styles.main}>
                 {tasks.map(task => (
-                    <Task key={task.id} titulo={task.titulo} />
+                    <Task key={task.id} titulo={task.titulo} handleDeleteTask={() => handleDeleteTask(task.id)} />
                 ))}
             </main>
-
         </>
     );
 }
