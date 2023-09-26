@@ -1,9 +1,16 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    background-color: #010409;
+  background-color: var(--color-background);
+}
+
+:root {
+  --color-background: #0d1117;
+  --color-background-header: #010409;
+  --color-white-600: #60686a;
+  --color-blue: #204f94;
 }

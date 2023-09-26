@@ -1,7 +1,7 @@
 .header {
     display: flex;
     padding: 20px;
-    background-color: #161B22;
+    background-color: var(--color-background-header);
     justify-content: center;
 }
 
@@ -19,5 +19,5 @@
 
 .contentHeader svg {
     margin-left: 20px;
-    color: white;;
+    color: white;
 }

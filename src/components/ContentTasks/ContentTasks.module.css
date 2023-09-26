@@ -1,0 +1,16 @@
+.textPendingQuest {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+}
+
+.main {
+    width: 850px;
+    height: 450px;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    background-color: rgba(59, 59, 59, 0.199);
+    border-radius: 8px;
+    margin: 25px auto;
+}
